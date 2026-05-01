@@ -27,13 +27,18 @@ def index():
 @expenses_bp.route('/set_balance', methods=['POST'])
 @login_required
 def set_balance():
-    update_user_balance(current_user, float(request.form.get('balance', 0)))
+    amount = request.form.get('balance')
+    if amount:
+        update_user_balance(current_user, float(amount))
     return redirect(url_for('expenses.index'))
 
 
 @expenses_bp.route('/add', methods=['POST'])
 @login_required
 def add_expense():
-    add_new_expense(request.form.get('item'), float(request.form.get('amount')),
-                    request.form.get('category'), current_user)
+    item = request.form.get('item')
+    amount = request.form.get('amount')
+    category = request.form.get('category')
+    if item and amount:
+        add_new_expense(item, float(amount), category, current_user)
     return redirect(url_for('expenses.index'))

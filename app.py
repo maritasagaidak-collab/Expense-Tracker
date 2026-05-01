@@ -1,12 +1,12 @@
-#EXPENSE Tracke!!!
 from flask import Flask, redirect, url_for
 from flask_login import LoginManager
 from models import User, db
 from auth.routes import auth_bp
 from expenses.routes import expenses_bp
 import os
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'super-secret-key'
+app.config['SECRET_KEY'] = 'dev-key-123'
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
@@ -33,5 +33,6 @@ def after_request(response):
     return response
 
 if __name__ == '__main__':
+    # Налаштування для Render
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
