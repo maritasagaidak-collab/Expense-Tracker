@@ -7,19 +7,15 @@ auth_bp = Blueprint('auth', __name__, template_folder='templates')
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        create_user(username, password)
+        create_user(request.form.get('username'), request.form.get('password'))
         return redirect(url_for('auth.login'))
     return render_template('register.html')
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
-        user = get_user_by_username(username)
-        if user and user.check_password(password):
+        user = get_user_by_username(request.form.get('username'))
+        if user and user.check_password(request.form.get('password')):
             login_user(user)
             return redirect(url_for('expenses.index'))
     return render_template('login.html')

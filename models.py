@@ -11,6 +11,7 @@ class BaseModel(Model):
 class User(BaseModel, UserMixin):
     username = CharField(unique=True)
     password_hash = CharField()
+    initial_balance = FloatField(default=0.0)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

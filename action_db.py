@@ -6,6 +6,10 @@ def create_user(username, password):
     user.save()
     return user
 
+def update_user_balance(user, amount):
+    user.initial_balance = amount
+    user.save()
+
 def get_user_by_username(username):
     return User.get_or_none(User.username == username)
 
