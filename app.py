@@ -6,7 +6,7 @@ from expenses.routes import expenses_bp
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dev-key-123'
+app.config['SECRET_KEY'] = 'dev-key-777'
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
@@ -33,6 +33,5 @@ def after_request(response):
     return response
 
 if __name__ == '__main__':
-    # Налаштування для Render
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)

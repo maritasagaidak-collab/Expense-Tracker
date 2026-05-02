@@ -1,3 +1,4 @@
+/* --- Основні налаштування --- */
 body {
     background-color: #050a06;
     color: white;
@@ -27,25 +28,10 @@ body {
     }
 }
 
-.main-logo {
-    width: 55px;
-    display: block;
-    margin: 0 auto 20px;
-}
-
-.balance-display {
-    font-size: 36px;
-    text-align: center;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.negative-glow {
-    color: #ff5252;
-    text-shadow: 0 0 15px rgba(255, 82, 82, 0.8);
-}
-
-input, select, button {
+/* --- Кнопки та форми --- */
+input,
+select,
+button {
     width: 100%;
     padding: 16px;
     margin-bottom: 12px;
@@ -56,16 +42,41 @@ input, select, button {
     outline: none;
 }
 
-input, select {
+input,
+select {
     background-color: #1a2e1e;
     color: white;
 }
 
-button {
+/* ФІКС: Робимо кнопку LOGIN та всі стандартні кнопки ЗЕЛЕНИМИ */
+button,
+button[type="submit"] {
     background-color: #4caf50;
     color: white;
     font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Спеціальні кольори для кнопок на головній */
+.income-btn {
+    background-color: #2e7d32 !important;
+}
+
+.expense-btn {
+    background-color: #c62828 !important;
+}
+
+/* --- Інші елементи --- */
+.balance-display {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 .card {
