@@ -6,7 +6,7 @@ from expenses.routes import expenses_bp
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dev-key-777'
+app.config['SECRET_KEY'] = 'your-secure-dev-key'
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'

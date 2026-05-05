@@ -1,4 +1,4 @@
-/* Основні стилі */
+/* --- Основа --- */
 body {
     background-color: #050a06;
     color: white;
@@ -28,17 +28,23 @@ body {
     }
 }
 
-/* Текстові елементи */
+/* --- Заголовки та баланс --- */
 .app-title { color: #4caf50; text-align: center; margin: 0; }
 .balance-display { font-size: 36px; text-align: center; font-weight: bold; margin: 15px 0; }
-.flash-message { color: #ff5252; text-align: center; font-size: 14px; margin-bottom: 10px; }
 
-/* Навігація валют */
-.currency-nav { text-align: center; margin-bottom: 15px; }
-.curr-link { color: #555; text-decoration: none; margin: 0 10px; font-weight: bold; }
-.curr-link.active { color: white; border-bottom: 2px solid #4caf50; }
+/* --- Повідомлення (Flash) --- */
+.flash-message {
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.msg-success { background-color: rgba(76, 175, 80, 0.2); color: #4caf50; border: 1px solid #4caf50; }
+.msg-error { background-color: rgba(255, 82, 82, 0.2); color: #ff5252; border: 1px solid #ff5252; }
 
-/* Інпути та кнопки */
+/* --- Форми та кнопки --- */
 input, select, button {
     width: 100%;
     padding: 16px;
@@ -53,7 +59,7 @@ input, select, button {
 input, select { background-color: #1a2e1e; color: white; }
 
 button {
-    background-color: #4caf50;
+    background-color: #4caf50; /* Кнопка LOGIN та інші тепер ЗЕЛЕНІ */
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -64,6 +70,6 @@ button {
 .expense-btn { background-color: #c62828 !important; }
 .btn-ok { background-color: #1a2e1e !important; font-size: 12px; }
 
-/* Графік та вихід */
+/* --- Картки та посилання --- */
 .card { background-color: #122416; padding: 15px; border-radius: 20px; margin-bottom: 20px; }
-.logout-link { text-align: center; display: block; margin-top: auto; color: #555; text-decoration: none; padding-top: 15px; }
+.logout-link { text-align: center; display: block; margin-top: auto; color: #555; text-decoration: none; padding: 10px; }

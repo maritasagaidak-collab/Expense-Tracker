@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 style="text-align: center;">Вхід</h2>
+<h2 style="text-align: center; color: #4caf50;">Вхід</h2>
 <form action="{{ url_for('auth.login') }}" method="POST">
     <input type="text" name="username" placeholder="Логін" required>
     <input type="password" name="password" placeholder="Пароль" required>
     <button type="submit">LOGIN</button>
 </form>
 <p style="text-align: center;">
-    <a href="{{ url_for('auth.register') }}" style="color: #4caf50;">Реєстрація</a>
+    Немає акаунту? <a href="{{ url_for('auth.register') }}" style="color: #4caf50;">Реєстрація</a>
 </p>
 {% endblock %}

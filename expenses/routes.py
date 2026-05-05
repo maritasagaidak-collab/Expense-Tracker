@@ -29,8 +29,9 @@ def add_income():
         amount = float(request.form.get('amount'))
         if amount <= 0: raise ValueError
         add_new_expense("Дохід", -amount, "Дохід", current_user)
+        flash("Дохід успішно додано!", "success")
     except:
-        flash("Введіть коректну суму!")
+        flash("Помилка: введіть коректну суму доходу!", "error")
     return redirect(url_for('expenses.index'))
 
 
@@ -38,11 +39,13 @@ def add_income():
 @login_required
 def add_expense():
     try:
+        item = request.form.get('item')
         amount = float(request.form.get('amount'))
         if amount <= 0: raise ValueError
-        add_new_expense(request.form.get('item'), amount, request.form.get('category'), current_user)
+        add_new_expense(item, amount, request.form.get('category'), current_user)
+        flash(f"Витрату '{item}' додано!", "success")
     except:
-        flash("Помилка в даних витрати!")
+        flash("Помилка: перевірте назву та суму!", "error")
     return redirect(url_for('expenses.index'))
 
 
@@ -50,7 +53,9 @@ def add_expense():
 @login_required
 def set_balance():
     try:
-        update_user_balance(current_user, float(request.form.get('balance', 0)))
+        val = float(request.form.get('balance', 0))
+        update_user_balance(current_user, val)
+        flash("Капітал оновлено!", "success")
     except:
-        flash("Некоректний капітал!")
+        flash("Некоректна сума!", "error")
     return redirect(url_for('expenses.index'))
