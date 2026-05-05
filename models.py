@@ -2,7 +2,7 @@ from peewee import *
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Версія v7 для гарантії чистої бази даних
+
 db = SqliteDatabase('expenses_v7.db')
 
 class BaseModel(Model):
