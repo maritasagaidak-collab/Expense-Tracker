@@ -2,7 +2,8 @@ from peewee import *
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-db = SqliteDatabase('expenses_v5.db')
+
+db = SqliteDatabase('expenses_v6.db')
 
 class BaseModel(Model):
     class Meta:

@@ -1,4 +1,4 @@
-/* --- Основні налаштування --- */
+/* Основні стилі */
 body {
     background-color: #050a06;
     color: white;
@@ -28,10 +28,18 @@ body {
     }
 }
 
-/* --- Кнопки та форми --- */
-input,
-select,
-button {
+/* Текстові елементи */
+.app-title { color: #4caf50; text-align: center; margin: 0; }
+.balance-display { font-size: 36px; text-align: center; font-weight: bold; margin: 15px 0; }
+.flash-message { color: #ff5252; text-align: center; font-size: 14px; margin-bottom: 10px; }
+
+/* Навігація валют */
+.currency-nav { text-align: center; margin-bottom: 15px; }
+.curr-link { color: #555; text-decoration: none; margin: 0 10px; font-weight: bold; }
+.curr-link.active { color: white; border-bottom: 2px solid #4caf50; }
+
+/* Інпути та кнопки */
+input, select, button {
     width: 100%;
     padding: 16px;
     margin-bottom: 12px;
@@ -42,15 +50,9 @@ button {
     outline: none;
 }
 
-input,
-select {
-    background-color: #1a2e1e;
-    color: white;
-}
+input, select { background-color: #1a2e1e; color: white; }
 
-/* ФІКС: Робимо кнопку LOGIN та всі стандартні кнопки ЗЕЛЕНИМИ */
-button,
-button[type="submit"] {
+button {
     background-color: #4caf50;
     color: white;
     font-weight: bold;
@@ -58,38 +60,10 @@ button[type="submit"] {
     text-transform: uppercase;
 }
 
-button:active {
-    transform: scale(0.98);
-}
+.income-btn { background-color: #2e7d32 !important; }
+.expense-btn { background-color: #c62828 !important; }
+.btn-ok { background-color: #1a2e1e !important; font-size: 12px; }
 
-/* Спеціальні кольори для кнопок на головній */
-.income-btn {
-    background-color: #2e7d32 !important;
-}
-
-.expense-btn {
-    background-color: #c62828 !important;
-}
-
-/* --- Інші елементи --- */
-.balance-display {
-    font-size: 36px;
-    text-align: center;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.card {
-    background-color: #122416;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-.logout-link {
-    text-align: center;
-    display: block;
-    margin-top: auto;
-    color: #555;
-    text-decoration: none;
-}
+/* Графік та вихід */
+.card { background-color: #122416; padding: 15px; border-radius: 20px; margin-bottom: 20px; }
+.logout-link { text-align: center; display: block; margin-top: auto; color: #555; text-decoration: none; padding-top: 15px; }
